@@ -1,0 +1,296 @@
+<html><head>
+
+  <link rel="stylesheet" href="./style.css">
+  <style>body {
+   color: black;
+pre,
+code {
+  font-family: Menlo, Monaco, "Courier New", monospace;
+}
+
+pre {
+  padding: .5rem;
+  line-height: 1.25;
+  overflow-x: scroll;
+}
+
+@media print {
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  img {
+    max-width: 100% !important;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+
+a,
+a:visited {
+  color: #01ff70;
+}
+
+a:hover,
+a:focus,
+a:active {
+  color: #2ecc40;
+}
+
+.retro-no-decoration {
+  text-decoration: none;
+}
+
+html {
+  font-size: 12px;
+}
+
+@media screen and (min-width: 32rem) and (max-width: 48rem) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media screen and (min-width: 48rem) {
+  html {
+    font-size: 16px;
+  }
+}
+
+body {
+  line-height: 1.85;
+}
+
+p,
+.retro-p {
+  font-size: 1rem;
+  margin-bottom: 1.3rem;
+}
+
+h1,
+.retro-h1,
+h2,
+.retro-h2,
+h3,
+.retro-h3,
+h4,
+.retro-h4 {
+  margin: 1.414rem 0 .5rem;
+  font-weight: inherit;
+  line-height: 1.42;
+}
+
+h1,
+.retro-h1 {
+  margin-top: 0;
+  font-size: 3.998rem;
+}
+
+h2,
+.retro-h2 {
+  font-size: 2.827rem;
+}
+
+h3,
+.retro-h3 {
+  font-size: 1.999rem;
+}
+
+h4,
+.retro-h4 {
+  font-size: 1.414rem;
+}
+
+h5,
+.retro-h5 {
+  font-size: 1.121rem;
+}
+
+h6,
+.retro-h6 {
+  font-size: .88rem;
+}
+
+small,
+.retro-small {
+  font-size: .707em;
+}
+
+/* https://github.com/mrmrs/fluidity */
+
+img,
+canvas,
+iframe,
+video,
+svg,
+select,
+textarea {
+  max-width: 100%;
+}
+
+html,
+body {
+  background-color: #222;
+  min-height: 100%;
+}
+
+html {
+  font-size: 18px;
+}
+
+body {
+  color: #fafafa;
+  font-family: "Courier New";
+  line-height: 1.45;
+  margin: 6rem auto 1rem;
+  max-width: 48rem;
+  padding: .25rem;
+}
+
+pre {
+  background-color: #333;
+}
+
+blockquote {
+  border-left: 3px solid #01ff70;
+  padding-left: 1rem;
+}
+}
+</style></head><body><h1 id="ams-map-sdk-quick-starter-guide">AMS Map sdk Quick Starter guide</h1>
+<h2 id="creating-a-sample-application">Creating a Sample Application</h2>
+<p>The use case is to create an application that displays a default map, which is non-interactive.</p>
+<p>Its implementation uses JavaScript code to display the map in an HTML page and consists of the following steps:</p>
+<p>The first step for any application based on the AMS Maps API for JavaScript is to load the necessary code libraries or modules.</p>
+<p>To load the modules, add the following </p>
+<p><code>&lt;script src=&quot;https://cdn.jsdelivr.net/gh/sauood-ahoy/ams-map-sdk-prototype-v1/ams-map-sdk.js&quot;
+  type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;</code></p>
+<p>To ensure optimum performance on mobile devices, add the following meta-tag to the <head> section of the HTML page:</p>
+<pre><code>&lt;meta <span class="hljs-built_in">name</span>=<span class="hljs-string">"viewport"</span> content=<span class="hljs-string">"initial-scale=1.0, width=device-width"</span> /&gt;
+</code></pre><p>Here is the complete <head> element that loads the core and service modules and ensures optimum performance on mobile devices.</p>
+<pre><code><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+      ...
+      <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"initial-scale=1.0,
+        width=device-width"</span> /&gt;</span>
+     <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/gh/sauood-ahoy/ams-map-sdk-prototype-v1/ams-map-sdk.js"</span>
+  <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf-8"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">link</span>
+      <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span>
+      <span class="hljs-attr">type</span>=<span class="hljs-string">"text/css"</span>
+      <span class="hljs-attr">href</span>=<span class="hljs-string">"https://js.api.here.com/v3/3.1/mapsjs-ui.css"</span>
+    /&gt;</span>
+ ...
+    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width: 640px; height: 480px"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"mapContainer"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre><p>An essential part of creating a working application with the AMS Maps API JavaScript is to establish communication with the back-end services provided by AMS REST APIs. In our scenario, the back-end services process requests for the map data and delivers it to the application for display.</p>
+<p>For this purpose, initialize a Platform object with the apikey you received on registration:</p>
+<pre><code><span class="hljs-keyword">var</span> <span class="hljs-keyword">platform</span> = amsMap.service.<span class="hljs-keyword">Platform</span>(
+  <span class="hljs-string">'xZwPJLh-cdNe9xEslxQrTeDIHsHFIeo7WnJra4S-i_s'</span>
+);
+</code></pre><p>Create an HTML container element in which the map can be rendered (for example, a div).
+Instantiate an H.Map object, specifying:
+the map container element
+the map type to use
+the zoom level at which to display the map
+the geographic coordinates of the point on which to center the map
+The implemenation JavaScript code shown below sets up a Map object, specifying the normal map type, zoom level 10, and the map centered over Europe</p>
+<pre><code><span class="hljs-built_in">var</span> platform = amsMap.service.Platform(
+  AMSKEY
+);
+
+<span class="hljs-built_in">var</span> defaultLayers = platform.createDefaultLayers();
+
+<span class="hljs-built_in">var</span> <span class="hljs-built_in">map</span> = amsMap.Map(
+  document.getElementById('<span class="hljs-built_in">map</span>'),
+  defaultLayers.<span class="hljs-built_in">vector</span>.normal.<span class="hljs-built_in">map</span>,
+  {
+    <span class="hljs-built_in">center</span>: { lat: <span class="hljs-number">50</span>, lng: <span class="hljs-number">5</span> },
+    zoom: <span class="hljs-number">4</span>,
+    pixelRatio: window.devicePixelRatio || <span class="hljs-number">1</span>,
+  }
+);
+</code></pre><h2 id="complete-html-example-page">Complete HTML Example Page</h2>
+<pre><code><span class="xml"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"initial-scale=1.0, width=device-width"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/gh/sauood-ahoy/ams-map-sdk-prototype-v1/ams-map-sdk.js"</span>
+  <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf-8"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">link</span>
+      <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span>
+      <span class="hljs-attr">type</span>=<span class="hljs-string">"text/css"</span>
+      <span class="hljs-attr">href</span>=<span class="hljs-string">"https://js.api.here.com/v3/3.1/mapsjs-ui.css"</span>
+    /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width: 640px; height: 480px"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"mapContainer"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+
+<span class="hljs-keyword">var</span> platform = amsMap.service.Platform(
+  AMSKEY
+);
+     <span class="hljs-keyword">var</span> defaultLayers = platform.createDefaultLayers();
+
+<span class="hljs-keyword">var</span> map = amsMap.Map(
+  <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'map'</span>),
+  defaultLayers.vector.normal.map,
+  </span></span><span class="hljs-template-variable">{
+    center: { lat: 50, lng: 5 }</span><span class="xml"><span class="javascript">,
+    <span class="hljs-attr">zoom</span>: <span class="hljs-number">4</span>,
+    <span class="hljs-attr">pixelRatio</span>: <span class="hljs-built_in">window</span>.devicePixelRatio || <span class="hljs-number">1</span>,
+  }
+);
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></span>
+</code></pre></body></html>
