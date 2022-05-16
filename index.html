@@ -1,10 +1,11 @@
 <html><head>
 
   <link rel="stylesheet" href="./style.css">
-  <style>body {
+  <style>
+  body {
    color: black;
-pre,
-code {
+  }
+pre,code {
   font-family: Menlo, Monaco, "Courier New", monospace;
 }
 
@@ -62,13 +63,13 @@ pre {
   }
 
   p,
-  h2,
+  h6,
   h3 {
     orphans: 3;
     widows: 3;
   }
 
-  h2,
+  h6,
   h3 {
     page-break-after: avoid;
   }
@@ -93,7 +94,7 @@ html {
   font-size: 12px;
 }
 
-@media screen and (min-width: 32rem) and (max-width: 48rem) {
+@media screen and (min-width: 32.4rem) and (max-width: 48rem) {
   html {
     font-size: 15px;
   }
@@ -115,10 +116,10 @@ p,
   margin-bottom: 1.3rem;
 }
 
-h1,
-.retro-h1,
-h2,
-.retro-h2,
+h4,
+.retro-h4,
+h6,
+.retro-h6,
 h3,
 .retro-h3,
 h4,
@@ -128,14 +129,14 @@ h4,
   line-height: 1.42;
 }
 
-h1,
-.retro-h1 {
+h4,
+.retro-h4 {
   margin-top: 0;
   font-size: 3.998rem;
 }
 
-h2,
-.retro-h2 {
+h6,
+.retro-h6 {
   font-size: 2.827rem;
 }
 
@@ -202,20 +203,20 @@ pre {
 blockquote {
   border-left: 3px solid #01ff70;
   padding-left: 1rem;
-}
-}
-</style></head><body><h1 id="ams-map-sdk-quick-starter-guide">AMS Map sdk Quick Starter guide</h1>
-<h2 id="creating-a-sample-application">Creating a Sample Application</h2>
-<p>The use case is to create an application that displays a default map, which is non-interactive.</p>
-<p>Its implementation uses JavaScript code to display the map in an HTML page and consists of the following steps:</p>
+}h4
+
+</style></head><body><h4 id="ams-map-sdk-quick-starter-guide" style="margin-bottom:1rem;">AMS Map sdk Quick Starter guide</h4>
+<h6 id="creating-a-sample-application" style="margin-bottom:1rem;font-weight: bold;">Creating a Sample Application</h6>
+<p style="margin-bottom:2.4rem;">The use case is to create an application that displays a default map, which is non-interactive.</p>
+<p style="margin-bottom:1rem;">Its implementation uses JavaScript code to display the map in an HTML page and consists of the following steps:</p>
 <p>The first step for any application based on the AMS Maps API for JavaScript is to load the necessary code libraries or modules.</p>
-<p>To load the modules, add the following </p>
-<p><code>&lt;script src=&quot;https://cdn.jsdelivr.net/gh/sauood-ahoy/ams-map-sdk-prototype-v1/ams-map-sdk.js&quot;
-  type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;</code></p>
+<p >To load the modules, add the following </p>
+<p ><pre><code>&lt;script src=&quot;https://cdn.jsdelivr.net/gh/sauood-ahoy/ams-map-sdk-prototype-v1/ams-map-sdk.js&quot;
+  type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;/code></pre></p>
 <p>To ensure optimum performance on mobile devices, add the following meta-tag to the <head> section of the HTML page:</p>
-<pre><code>&lt;meta <span class="hljs-built_in">name</span>=<span class="hljs-string">"viewport"</span> content=<span class="hljs-string">"initial-scale=1.0, width=device-width"</span> /&gt;
-</code></pre><p>Here is the complete <head> element that loads the core and service modules and ensures optimum performance on mobile devices.</p>
-<pre><code><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<pre><code style="margin-bottom:2.4rem;">&lt;meta <span class="hljs-built_in">name</span>=<span class="hljs-string">"viewport"</span> content=<span class="hljs-string">"initial-scale=1.0, width=device-width"</span> /&gt;
+</code></pre><p style="margin-top:2.4rem;">Here is the complete <head> element that loads the core and service modules and ensures optimum performance on mobile devices.</p>
+<pre><code style="margin-bottom:2.4rem;"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
       ...
@@ -232,19 +233,19 @@ blockquote {
     <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"width: 640px; height: 480px"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"mapContainer"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-</code></pre><p>An essential part of creating a working application with the AMS Maps API JavaScript is to establish communication with the back-end services provided by AMS REST APIs. In our scenario, the back-end services process requests for the map data and delivers it to the application for display.</p>
+</code></pre><p style="margin-top:2.4rem;" >An essential part of creating a working application with the AMS Maps API JavaScript is to establish communication with the back-end services provided by AMS REST APIs. In our scenario, the back-end services process requests for the map data and delivers it to the application for display.</p>
 <p>For this purpose, initialize a Platform object with the apikey you received on registration:</p>
 <pre><code><span class="hljs-keyword">var</span> <span class="hljs-keyword">platform</span> = amsMap.service.<span class="hljs-keyword">Platform</span>(
   <span class="hljs-string">AMS KEY</span>
 );
-</code></pre><p>Create an HTML container element in which the map can be rendered (for example, a div).
+</code></pre><p style="margin-top:2.4rem;">Create an HTML container element in which the map can be rendered (for example, a div).
 Instantiate an H.Map object, specifying:
 the map container element
 the map type to use
 the zoom level at which to display the map
 the geographic coordinates of the point on which to center the map
 The implemenation JavaScript code shown below sets up a Map object, specifying the normal map type, zoom level 10, and the map centered over Europe</p>
-<pre><code><span class="hljs-built_in">var</span> platform = amsMap.service.Platform(
+<pre><code style="margin-bottom:2.4rem;"><span class="hljs-built_in">var</span> platform = amsMap.service.Platform(
   AMSKEY
 );
 
@@ -259,7 +260,7 @@ The implemenation JavaScript code shown below sets up a Map object, specifying t
     pixelRatio: window.devicePixelRatio || <span class="hljs-number">1</span>,
   }
 );
-</code></pre><h2 id="complete-html-example-page">Complete HTML Example Page</h2>
+</code></pre><h6 style="margin-top:2.4rem;" id="complete-html-example-page">Complete HTML Example Page</h6>
 <pre><code><span class="xml"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
